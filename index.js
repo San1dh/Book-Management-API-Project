@@ -230,6 +230,51 @@ booky.post("/pub/new", (req, res) => {
     return res.json({ publications: database.publications });
 });
 
+// PUT REQUESTS
+
+/*
+Route           /pub/update/book
+Description     update/add new publications
+Access          PUBLIC
+Parameter       isbn
+Methods         PUT
+*/
+booky.put("/pub/update/book/:isbn", (req, res) => {
+    // update the publication database
+    database.publications.forEach((publication) => {
+        if (publication.id === req.body.pubId) {
+            if(!publication.books.includes(req.params.isbn))
+               return publication.books.push(req.params.isbn);
+        }
+    });
+
+    // update the book database
+    database.books.forEach((book) => {
+        if (book.ISBN === req.params.isbn) {
+            book.publication = req.body.pubId;
+            return;
+        }
+    });
+
+    return res.json({
+        books: database.books,
+        publications: database.publications,
+        message: "Successfully updated publication",
+    });
+});
+
+// DELETE REQUESTS
+
+/*
+Route           /book/delete
+Description     delete a book
+Access          PUBLIC
+Parameter       isbn
+Methods         DELETE
+*/
+booky.delete("/book/delete/:isbn", (req, res) => { });
+
+
 
 
 
