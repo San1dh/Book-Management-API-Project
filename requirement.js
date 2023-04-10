@@ -14,6 +14,7 @@ id, name, books[]
 
 we have to design & code an API over this
 
+// GET REQUESTS
 
 1) BOOKS
    we need an API -
@@ -33,6 +34,15 @@ to get a list of authors based on books ✅
 to get all the publications ✅
 to get specific publication ✅
 to get a list of publications based on a book ✅
+
+// POST REQUESTS
+
+// 1) Add new book ✅
+// 2) Add new publication ✅
+// 3) Add new author ✅
+
+
+
 
 */
 

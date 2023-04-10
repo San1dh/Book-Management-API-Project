@@ -13,9 +13,9 @@ const books = [
 
 const author = [
     {
-        id: 1,
-        name: "Aradhana",
-        books: ["12345Book", "secretBook"]
+        "id": 1,
+        "name": "Aradhana",
+        "books": ["12345Book", "secretBook"]
     },
     {
         id: 2,
