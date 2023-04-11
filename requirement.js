@@ -49,9 +49,9 @@ to get a list of publications based on a book ✅
 
 // DELETE REQUESTS
 
-// 1) Delete a book 
-// 2) Delete an author from a book
-// 3) Delete an author from a book and related book from author
+// 1) Delete a book ✅
+// 2) Delete an author from a book ✅
+// 3) Delete an author from a book and related book from author ✅
 
 
 
