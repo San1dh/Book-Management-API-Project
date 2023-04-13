@@ -1,4 +1,8 @@
+require('dotenv').config();
+
+
 const express = require('express');
+const mongoose = require('mongoose');
 var bodyParser = require("body-parser")
 
 // database
@@ -9,6 +13,23 @@ const booky = express();
 
 booky.use(bodyParser.urlencoded({ extended: true }));
 booky.use(bodyParser.json());
+
+mongoose.connect(process.env.MONGO_URL, 
+ {
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
+    // useFindAndModify: false,
+    // useCreateIndex: true
+
+  // (StackOverflow, Sep. 15, 2021) From the Mongoose 6.0 docs:
+
+  // useNewUrlParser, useUnifiedTopology, useFindAndModify, and useCreateIndex
+  // are no longer supported options. Mongoose 6 always behaves as if 
+  // useNewUrlParser, useUnifiedTopology, and useCreateIndex are true, and 
+  // useFindAndModify is false. Please remove these options from your code. 
+}
+).then(() => console.log('connection established'));
+
 
 // GET REQUESTS
 
